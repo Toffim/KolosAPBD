@@ -26,7 +26,25 @@ namespace APBD_Kolos.Controllers
             var delivery = await _dbService.GetDelivery(id);
             return Ok(delivery);
         }
+        
+        /*
+        [HttpPost]
+        public async Task<IActionResult> CreateDelivery(DeliveryCreate delivery)
+        {
+            if (!await _dbService.IsInvalidRequestData(delivery))
+            {
+                return BadRequest("Invalid request data.");
+            }
+
+            var deliveryExists = await _dbService.DoesDeliveryExist(delivery);
+            if (deliveryExists)
+            {
+                return BadRequest($"Delivery with id {delivery.} already exists");
+            }
+            
+            
+            return Ok("Delivery created");
+        }
+        */
     }
-    
-    
 }
