@@ -133,7 +133,7 @@ public class DbService : IDbService
             SELECT pd.product_id, pd.amount, pr.name, pr.price
             FROM Product_Delivery AS pd
             JOIN Product AS pr ON pr.product_id = pd.product_id
-            WHERE pd.delivery_id = 1;
+            WHERE pd.delivery_id = @IdDelivery;
                 ";
         command.Parameters.AddWithValue("@IdDelivery", deliveryId);
 
